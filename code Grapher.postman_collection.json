@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "d8101683-4c3e-4eb6-af07-37082a48b4f8",
+		"name": "code Grapher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18939149"
+	},
+	"item": [
+		{
+			"name": "Get All Posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMDczNTkxLCJpYXQiOjE2NjEwNzMyOTEsImp0aSI6ImViM2VhMTc5YzJjZDQ2YmU5MmRhYzA4Y2U3MTYxNDE0IiwidXNlcl9pZCI6MX0.8Ndor0QD-UzjDQAtKEFvht0YnPeYRGGyUrECBxxMiZg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base-url}}/posts",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "singIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"abdulrehman\",\r\n    \"password\":\"password\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/signin/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"signin",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2MjM5OTUzMiwiaWF0IjoxNjYxMTAzNTMyLCJqdGkiOiJiYTgyNjRhYWI5MDg0ZGE1OGYxM2ZiMWUyODI3MTk5OCIsInVzZXJfaWQiOjJ9.-4GMb6nhxxMMreI4x8DhXpuU0cmXHFO7IjcK1ph7x7Q",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"abdul\",\r\n    \"last_name\":\"rehman\",\r\n    \"username\":\"abdulrehman\",\r\n    \"email\":\"apnahihy@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/accounts/signup/",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"accounts",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMTA3MjgzLCJpYXQiOjE2NjExMDM1MzIsImp0aSI6IjViNzI0ODNhN2Q2NTQyZDY4MTJiOWQwNmZmZDViMjNlIiwidXNlcl9pZCI6Mn0.SzsGlJsZtTxjlvhq0ReouqiCHt40tvO1kqKEKY9fcBU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/userlist/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"userlist",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/posts/?id=1",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"post5\",\r\n    \"body\":\"nosdjf\",\r\n    \"author\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/posts/",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMTA0NzAyLCJpYXQiOjE2NjExMDM1MzIsImp0aSI6IjRiNGM4MzE4ZGU5OTQ4NjVhYjBmM2RiZmZiZWMwYThkIiwidXNlcl9pZCI6Mn0.eUEA29i4GwfDM31cTEIcPNCK2aTtXMYJBzJYILtTor0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"title\": \"post6\",\r\n    \"body\": \"body6\",\r\n    \"author\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/posts/",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMTA5NTczLCJpYXQiOjE2NjExMDkyNzMsImp0aSI6ImRjODE0NTI4NGQ5ZTQ1OWU4YThhYWZlMGQzMDY0NDlmIiwidXNlcl9pZCI6Mn0.6xlZXJHJerA--hY4Psw6eNSuTcV4sIe9bcGwWX3piBE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"title\": \"post6\",\r\n    \"body\": \"body6\",\r\n    \"author\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/posts/",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
