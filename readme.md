@@ -10,7 +10,7 @@
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/sibtc/drf-jwt-example.git
+git clone https://github.com/Abdulrehman517/Code_grapher_assesment.git
 ```
 
 Install the requirements:
