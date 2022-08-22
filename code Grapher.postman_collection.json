@@ -189,7 +189,13 @@
 			"name": "Create Posts",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMTQ3MTIyLCJpYXQiOjE2NjExNDY4MjIsImp0aSI6ImNkNTA4MDQwYmUxZTRiYWM4MTE4YTU0OTM3NGZlOGU4IiwidXNlcl9pZCI6Mn0.uc1p2Y-RPshWxc7XGKeAjLWZ5cSNfAvtyo6VEZ8XC8w",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"title\":\"post5\",\r\n    \"body\":\"nosdjf\",\r\n    \"author\":2\r\n}",
@@ -200,13 +206,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{base-url}}/posts/",
+					"raw": "{{base-url}}/posts/create",
 					"host": [
 						"{{base-url}}"
 					],
 					"path": [
 						"posts",
-						""
+						"create"
 					]
 				}
 			},
@@ -219,7 +225,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMTA0NzAyLCJpYXQiOjE2NjExMDM1MzIsImp0aSI6IjRiNGM4MzE4ZGU5OTQ4NjVhYjBmM2RiZmZiZWMwYThkIiwidXNlcl9pZCI6Mn0.eUEA29i4GwfDM31cTEIcPNCK2aTtXMYJBzJYILtTor0",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMTQ3NjgzLCJpYXQiOjE2NjExNDczODMsImp0aSI6IjI4NWNiMmZhODExOTQwZjQ5ODAyZmEwNDg1MDZlNTllIiwidXNlcl9pZCI6MX0.1d65uIRNwXR5ORygf-1xu7DSzEnBf8GQ9Q8pK_1ocXk",
 						"type": "text"
 					}
 				],
@@ -233,13 +239,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{base-url}}/posts/",
+					"raw": "{{base-url}}/posts/update/",
 					"host": [
 						"{{base-url}}"
 					],
 					"path": [
 						"posts",
+						"update",
 						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7",
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -258,7 +272,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 6,\r\n    \"title\": \"post6\",\r\n    \"body\": \"body6\",\r\n    \"author\": 1\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -266,18 +280,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{base-url}}/posts/",
+					"raw": "{{base-url}}/posts/update/",
 					"host": [
 						"{{base-url}}"
 					],
 					"path": [
 						"posts",
+						"update",
 						""
 					],
 					"query": [
 						{
-							"key": "",
-							"value": null,
+							"key": "id",
+							"value": "3",
 							"disabled": true
 						}
 					]
