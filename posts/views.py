@@ -1,14 +1,14 @@
 from rest_framework import status
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from posts.models import Posts
 from posts.Serializers.PostsSerializers import PostsIdRequiredSerializer, PostSerializer
 
 
-class PostsAPIView(APIView):
-    permission_classes = [IsAuthenticated, IsAdminUser]
+class PostListAPIView(APIView):
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         id = request.GET.get('id')
@@ -22,6 +22,10 @@ class PostsAPIView(APIView):
             serializer = PostSerializer(posts, many=True)
             return Response(serializer.data)
 
+
+class PostsAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
     def post(self, request):
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
@@ -30,6 +34,9 @@ class PostsAPIView(APIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+class UpdateDeletePostAPIView(APIView):
+    permission_classes = [IsAuthenticated, IsAdminUser]
     def put(self, request):
         serializer = PostsIdRequiredSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
